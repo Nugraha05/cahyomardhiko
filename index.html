@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cahyo Mardhiko</title>
+    <link rel="icon" href="Assets/image/favicon.ico">
+
+    <style>
+
+        /* input::placeholder, textarea::placeholder {
+            color: #e53070;
+        } */
+
+        input::-webkit-textfield-decoration-container {
+            width: 250px;
+        }
+    </style>
+    
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AlpineJS -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+    tailwind.config = {
+        theme: {
+            fontFamily: {
+                montserrat: ['Montserrat', 'sans-serif']
+            },
+            extend: {
+                colors: {
+                    clifford: '#da373d',
+                },
+                // maxWidth: {
+                //     '8xl': '100rem',
+                // }
+            }
+        }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="p-0 m-0 box-border font-montserrat">
+
+    <!-- -->
+    <section class="">
+
+        <!-- Button Back -->
+        <section class="relative">
+            <!-- <a href="#">
+                <div class="fixed right-0 bottom-0 m-10"><i class="bg-[#e53070] p-4 rounded-full ml-2 fa-solid fa-angle-up"></i></div>
+            </a> -->
+
+            <!-- Hotline -->
+            <div class="bg-[#ffffff] lg:px-0 px-10 text-center py-2 text-[#e53070] font-semibold">
+                <p class="text-sm font-reguler line-clamp-1">Informasi terkini, uptodate, product new, talent berpengalaman . . . . . .</p>
+            </div>
+
+            <!-- Navbar 1 -->
+            <div class="sticky top-0 z-10 bg-[#e53070] py-3 min-w-full">
+                <div class="">
+                    <div class="mx-auto lg:px-0 px-10 max-w-6xl flex justify-between">
+                        <a href="">
+                            <img class="my-auto h-[50px] sm:h-[80px]" src="Assets/image/logo.png" alt="Logo">
+                        </a>
+                        <form class="hidden sm:block text-[#e53070] rounded-full flex bg-[#ffffff] w-max px-3 py-2 my-auto" action="" method="get">
+                            <i class="mx-3 my-auto fa-solid fa-magnifying-glass"></i>
+                            <input class="mr-3 placeholder:text-[#e53070] text-sm focus:outline-none w-[250px]" type="search" placeholder="Search Talent, Product">
+                        </form>
+                        <div class="sm:hidden block my-auto text-[#ffffff]"  x-data="{ open: false }">
+                            <a @click="open = ! open" type="button" aria-expanded="false">
+                                <i :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="ml-2 fa-solid fa-bars"></i>
+                            </a>
+                            <!-- Mobile Navbar Content -->
+                            <div 
+                                x-show="open" 
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0"
+                                x-transition:enter-end="opacity-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="text-[#e53070] w-screen absolute top-[74px] right-0 lg:px-0 px-10 bg-[#ffffff] max-w-6xl border-b-4 border-b-[#e53070]">
+
+                                <!-- absolute border-b-4 border-b-[#e53070] lg:px-0 px-10 py-4 bg-[#ffffff] w-screen max-w-6xl sm:hidden -->
+                                
+                                <div class="overflow-hidden">
+                                    <div class="relative grid gap-6 bg-white py-6 sm:gap-8">
+                                        <a href="#" class="flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                        <i class="mr-2 fa-solid fa-tags"></i>
+                                        <div class="ml-4">
+                                            <p class="text-base font-medium text-gray-900 font-semibold">Pricelist</p>
+                                            <p class="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, laborum.</p>
+                                        </div>
+                                        </a>
+    
+                                        <a href="#" class="flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                        <i class="mr-2 fa-solid fa-boxes-stacked"></i>
+                                        <div class="ml-4">
+                                            <p class="text-base font-medium text-gray-900 font-semibold">Product</p>
+                                            <p class="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quasi consequuntur soluta modi vero expedita non porro velit atque nemo.</p>
+                                        </div>
+                                        </a>
+    
+                                        <a href="#" class="flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                        <i class="mr-2 fa-solid fa-people-group"></i>
+                                        <div class="ml-4">
+                                            <p class="text-base font-medium text-gray-900 font-semibold">Talent</p>
+                                            <p class="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem repudiandae, magnam molestias possimus quos accusamus provident ipsum vero tenetur sint?</p>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <!-- <div class="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8">
+                                        <div>
+                                        <h3 class="text-base font-medium text-gray-500">More</h3>
+                                        <ul role="list" class="mt-4 space-y-4">
+                                            <li class="truncate text-base">
+                                            <a href="#" class="font-medium text-gray-900 hover:text-gray-700">More Options</a>
+                                            </li>
+    
+                                            <li class="truncate text-base">
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                
+                                <!-- <form class=" text-[#e53070] bg-[#ffffff] flex px-2 py-2 my-auto" action="" method="get">
+                                    <i class="mx-3 my-auto fa-solid fa-magnifying-glass"></i>
+                                    <input class="mr-20 text-sm" type="search" placeholder="Search Talent, Product">
+                                </form> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SECTION TOP --> <!-- //bg-no-repeat bg-cover-->
+            <section class="sm:min-h-screen h-[350px] bg-cover bg-no-repeat bg-center" style="background-image: url(Assets/image/banner.png)">
+
+                <!-- Navbar 2 -->
+                <div class="hidden sm:block bg-[#121119] py-5 text-[#e53070] font-semibold">
+                    <ul class="mx-auto lg:px-0 px-10 max-w-6xl flex flex justify-between">
+                        <div class="flex gap-10 my-auto">
+                            <li><a href="#mid"><i class="mr-2 fa-solid fa-tags"></i>Pricelist</a></li>
+                            <!-- <li><a href="#"><i class="mr-2 fa-solid fa-boxes-stacked"></i>Product<i class="ml-2 fa-solid fa-angle-down"></i></a></li> -->
+
+                            <!-- ttttttttttttttttttttttttttt -->
+                            <li class="cursor-pointer">
+                                <div class="relative" x-data="{ open: false }">
+                                    <i class="mr-2 fa-solid fa-boxes-stacked"></i>
+                                    <a @click="open = ! open" type="button" aria-expanded="false">
+                                        <span>Product</span>
+                                        <i :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="ml-2 fa-solid fa-angle-down"></i>
+                                    </a>
+        
+                                    <div 
+                                        x-show="open" 
+                                        x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0"
+                                        x-transition:enter-end="opacity-100"
+                                        x-transition:leave="transition ease-in duration-200"
+                                        x-transition:leave-start="opacity-100"
+                                        x-transition:leave-end="opacity-0"
+                                        class="absolute mt-[25px] w-screen max-w-sm transform sm:px-0 border-b-4 border-b-[#e53070]">
+        
+                                        <div class="overflow-hidden shadow-lg ring-black ring-opacity-5">
+                                        <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                                            <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                            
+                                            <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+                                            </svg>
+                                            
+                                            <div class="ml-4">
+                                                <p class="text-base font-medium text-gray-900">Enterprise</p>
+                                                <p class="mt-1 text-sm text-gray-500">Enterprise options.</p>
+                                            </div>
+                                            </a>
+        
+                                            <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                            <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9" />
+                                            </svg>
+                                            <div class="ml-4">
+                                                <p class="text-base font-medium text-gray-900">Books</p>
+                                                <p class="mt-1 text-sm text-gray-500">All books</p>
+                                            </div>
+                                            </a>
+        
+                                            <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                            <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                            </svg>
+                                            
+                                            <div class="ml-4">
+                                                <p class="text-base font-medium text-gray-900">Users</p>
+                                                <p class="mt-1 text-sm text-gray-500">All Users</p>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        <!-- <div class="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8">
+                                            <div>
+                                            <h3 class="text-base font-medium text-gray-500">More</h3>
+                                            <ul role="list" class="mt-4 space-y-4">
+                                                <li class="truncate text-base">
+                                                <a href="#" class="font-medium text-gray-900 hover:text-gray-700">More Options</a>
+                                                </li>
+        
+                                                <li class="truncate text-base">
+                                                </li>
+                                            </ul>
+                                            </div>
+                                        </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="mr-2 fa-solid fa-people-group"></i>Talent</a></li>
+                        </div>
+                        <div class="hidden sm:block">
+                            <li class=""><a href=""><img class="h-[35px]" src="Assets/image/sponsor.png" alt=""></a></li>
+                        </div>
+                    </ul>
+                </div>
+                
+                <!-- <div class="h-full bg-black/10">
+                    m
+                </div> -->
+
+                <!-- Top Image -->
+                <!-- <div class="bg-local min-h-screen" style="background-image: url(Assets/image/IMG_2439-removebg-preview.png)">
+                    ptttttttttt
+                </div> -->
+            </section>
+
+            <!-- SECTION MID -->
+            <section id="mid" class="">
+
+                <!-- LAYANAN KAMI -->
+                <div class="py-20">
+                    
+                    <!-- Headline -->
+                    <div class="flex justify-center align-center pb-10">
+                        <h1 class="text-bold text-[#e53070] text-2xl font-bold tracking-widest font-monserrat">LAYANAN KAMI</h1>
+                    </div>
+        
+                    <!-- Section Card -->
+                    <div class="flex justify-center align-center">
+        
+                        <div class="max-w-6xl w-screen lg:px-0 px-10 grid md:grid-cols-3 gap-10">
+            
+                            <!-- Card -->
+                            <a href="#" class="hover:scale-105 transition delay-150 duration-300 ease-in-out flex items-stretch">
+                                <div class="relative w-full bg-black/10 pt-7 font-bold text-xl text-[#e53070]">
+                                    <div class="flex justify-between my-auto px-7">
+                                        <p class="w-[70%]">MERCHANDISE</p>
+                                        <i class="my-auto ml-2 fa-solid fa-angle-down"></i>
+                                    </div>
+                                    <div class="md:absolute inset-x-0 bottom-0 bg-cover bg-center bg-no-repeat h-[500px]" style="background-image: url(Assets/image/service-1.png)"></div>
+                                </div>
+                            </a>
+
+                            <!-- Card -->
+                            <a href="#" class="hover:scale-105 transition delay-150 duration-300 ease-in-out flex items-stretch">
+                                <div class="relative w-full bg-black/10 pt-7 font-bold text-xl text-[#e53070]">
+                                    <div class="flex justify-between my-auto px-7">
+                                        <p class="w-[70%]">ENDORSEMENT TALENT</p>
+                                        <i class="my-auto ml-2 fa-solid fa-angle-down"></i>
+                                    </div>
+                                    <div class="md:absolute inset-x-0 bottom-0 bg-cover bg-center bg-no-repeat h-[500px]" style="background-image: url(Assets/image/service-2.png)"></div>
+                                </div>
+                            </a>
+
+                            <!-- Card -->
+                            <a href="#" class="hover:scale-105 transition delay-150 duration-300 ease-in-out flex items-stretch">
+                                <div class="relative w-full bg-black/10 pt-7 font-bold text-xl text-[#e53070]">
+                                    <div class="flex justify-between my-auto px-7">
+                                        <p class="w-[70%]">PRODUCT UMKM & SOSIAL</p>
+                                        <i class="my-auto ml-2 fa-solid fa-angle-down"></i>
+                                    </div>
+                                    <div class="bg-cover bg-center bg-no-repeat h-[500px]" style="background-image: url(Assets/image/service-3.png)"></div>
+                                </div>
+                            </a>
+                            <!-- <a href="#" class="hover:scale-105 transition delay-150 duration-300 ease-in-out flex items-stretch">
+                                <div class="relative w-screen h-[600px] bg-black/10 w-max pt-7 px-5 font-bold text-xl text-[#e53070]">
+                                    <div class="flex justify-between my-auto px-5">
+                                        <p class="w-[70%]">MERCHANDISE</p>
+                                        <i class="my-auto ml-2 fa-solid fa-angle-down"></i>
+                                    </div>
+                                    <div class="inset-x-0 absolute bottom-0">
+                                        <img class="h-[500px]" src="Assets/image/service-1.png" alt="">
+                                    </div>
+                                </div>
+                            </a> -->
+            
+                            <!-- Card -->
+                            <!-- <a href="#" class="hover:scale-105 transition delay-150 duration-300 ease-in-out flex items-stretch">
+                                <div class="relative w-screen h-[600px] bg-black/10 w-max pt-7 px-5 font-bold text-xl text-[#e53070]">
+                                    <div class="flex justify-between my-auto px-5">
+                                        <p class="w-[70%]">ENDORSEMENT TALENT</p>
+                                        <i class="my-auto ml-2 fa-solid fa-angle-down"></i>
+                                    </div>
+                                    <div class="inset-x-0 absolute bottom-0">
+                                        <img class="h-[500px]" src="Assets/image/service-2.png" alt="">
+                                    </div>
+                                </div>
+                            </a> -->
+            
+                            <!-- Card -->
+                            <!-- <a href="#" class="hover:scale-105 transition delay-150 duration-300 ease-in-out flex items-stretch">
+                                <div class="relative w-screen h-[600px] bg-black/10 w-max pt-7 px-5 font-bold text-xl text-[#e53070]">
+                                    <div class="flex justify-between my-auto px-5">
+                                        <p class="w-[80%]">PRODUCT UMKM & SOSIAL</p>
+                                        <i class="my-auto ml-2 fa-solid fa-angle-down"></i>
+                                    </div>
+                                    <div class="inset-x-0 absolute bottom-0">
+                                        <img class="h-[500px]" src="Assets/image/service-3.png" alt="">
+                                    </div>
+                                </div>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOCIAL MEDIA -->
+                <div class="pb-10">
+                    
+                    <!-- Section Social Media -->
+                    <div class="flex justify-center align-center">
+        
+                        <div class="max-w-6xl w-screen lg:px-0 px-10 grid md:grid-cols-3 gap-10">
+        
+                            <!-- Card -->
+                            <div class="flex">
+                                <div class="w-full bg-black/10 py-10">
+                                    <div class="my-auto">
+                                        <div class="flex justify-center align-center">
+                                            <h1 class="text-center font-semibold">Follow Sosial Media Kami</h1>
+                                        </div>
+                                        <div class="flex justify-center items-center px-10 py-5 gap-3 text-xl text-[#ffffff]">
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-instagram"></i></a>
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-tiktok"></i></a>
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-twitter"></i></a>
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-facebook"></i></a>
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-youtube"></i></a>
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-whatsapp"></i></a>
+                                        </div>
+                                        <a class="flex justify-center align-center font-semibold text-[#e53070]" href="#">@CahyoMardhiko<i class="ml-2 my-auto fa-solid fa-check"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="flex">
+                                <div class="w-full bg-black/10 py-10">
+                                    <div class="my-auto">
+                                        <div class="flex justify-center align-center">
+                                            <h1 class="text-center font-semibold">Follow Sosial Media Kami</h1>
+                                        </div>
+                                        <div class="flex align-center justify-center px-10 py-5 mx-auto gap-3 text-xl text-[#ffffff]">
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-instagram"></i></a>
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-tiktok"></i></a>
+                                            <a href=""><i class="hover:scale-125 transition delay-150 duration-300 ease-in-out bg-[#e53070] p-2 rounded-full fa-brands fa-facebook"></i></a>
+                                        </div>
+                                        <a class="flex justify-center align-center font-semibold text-[#e53070]" href="#">@CahyoMardhikoAngels<i class="ml-2 my-auto fa-solid fa-check"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="flex">
+                                <div class="w-full bg-black/10 py-6">
+                                    <div class="my-auto">
+                                        <div class="flex justify-center align-center">
+                                            <h1 class="text-center font-semibold w-[80%] ">Belanja Online di Marketplace Favorit Kamu</h1>
+                                        </div>
+                                        <div class="flex align-center justify-center px-10 py-5 mx-auto gap-3 text-xl text-[#ffffff]">
+                                            <a href=""><img class="h-12 hover:scale-125 transition delay-150 duration-300 ease-in-out p-2" src="Assets/image/tokopedia-colored.png" alt=""></a>
+                                            <a href=""><img class="h-12 hover:scale-125 transition delay-150 duration-300 ease-in-out p-2" src="Assets/image/shopee-colored.png" alt=""></a>
+                                            <a href=""><img class="h-12 hover:scale-125 transition delay-150 duration-300 ease-in-out p-2" src="Assets/image/blibli.png" alt=""></a>
+                                            <a href=""><img class="h-12 hover:scale-125 transition delay-150 duration-300 ease-in-out p-2" src="Assets/image/tiktok.png" alt=""></a>
+                                        </div>
+                                        <a class="flex justify-center align-center font-semibold text-[#e53070]" href="#">@CahyoMardhiko<i class="ml-2 my-auto fa-solid fa-check"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INFORMASI -->
+                <div class="py-20"> <!-- mx-10 -->
+                    
+                    <!-- Headline -->
+                    <div class="flex justify-center align-center pb-10">
+                        <h1 class="text-bold text-[#e53070] text-2xl font-bold tracking-widest font-monserrat">INFORMASI</h1>
+                    </div>
+        
+                    <!-- Section Card -->
+                    <div class="flex justify-center align-center">
+        
+                        <div class="max-w-6xl lg:px-0 px-10 grid md:grid-cols-3 gap-10">
+            
+                            <!-- Card -->
+                            <div>
+                                <a href="">
+                                    <div href="#" class="flex items-stretch">
+                                        <div class="relative w-full bg-black/10font-bold text-xl text-[#e53070]">
+                                            <div class="bg-black/10 bg-cover bg-center bg-no-repeat h-[250px]" style="background-image: url(Assets/image/informasi-1.png)"></div>
+                                            <div class="bg-[#e53070] px-5 py-5 text-[#ffffff]">
+                                                <p class="text-sm tracking-widest">Informasi</p>
+                                                <h1 class="pt-2 pb-5 font-bold text-2xl">OWNER</h1>
+                                                <p class="text-sm opacity-[.6] line-clamp-2">Bpk Muhammad Tukul beliau adalah pemimpin Sandiwara Ketoprak Cahyo Mardhiko .Cahyo Mardhiko didirikan tahun .......</p>
+                                                <div class="pt-5 flex justify-between text-xs font-semibold tracking-wide">
+                                                    <p>Agustus 02, 2023</p>
+                                                    <a href="#">VIEW MORE<i class="ml-2 fa-solid fa-angle-down"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Card -->
+                            <div>
+                                <a href="">
+                                    <div href="#" class="flex items-stretch">
+                                        <div class="relative w-full bg-black/10font-bold text-xl text-[#e53070]">
+                                            <div class="bg-black/10 bg-cover bg-center bg-no-repeat h-[250px]" style="background-image: url(Assets/image/informasi-2.jpg)"></div>
+                                            <div class="bg-[#e53070] px-5 py-5 text-[#ffffff]">
+                                                <p class="text-sm tracking-widest">Informasi</p>
+                                                <h1 class="pt-2 pb-5 font-bold text-2xl">SOCIAL MEDIA</h1>
+                                                <p class="text-sm opacity-[.6] line-clamp-2">Cahyo Mardhiko Mempunyai Sosmed Official di YouTube,Tiktok, Instagram, Snackvideo</p>
+                                                <div class="pt-5 flex justify-between text-xs font-semibold tracking-wide">
+                                                    <p>Agustus 02, 2023</p>
+                                                    <a href="#">VIEW MORE<i class="ml-2 fa-solid fa-angle-down"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card -->
+                            <div>
+                                <a href="">
+                                    <div href="#" class="flex items-stretch">
+                                        <div class="relative w-full bg-black/10font-bold text-xl text-[#e53070]">
+                                            <div class="bg-black/10 bg-cover bg-center bg-no-repeat h-[250px]" style="background-image: url(Assets/image/informasi-3.jpg)"></div>
+                                            <div class="bg-[#e53070] px-5 py-5 text-[#ffffff]">
+                                                <p class="text-sm tracking-widest">Informasi</p>
+                                                <h1 class="pt-2 pb-5 font-bold text-2xl">GALLERY</h1>
+                                                <p class="text-sm opacity-[.6] line-clamp-2">Beberapa Foto - Foto Dari Hasil Pentas</p>
+                                                <div class="pt-5 flex justify-between text-xs font-semibold tracking-wide">
+                                                    <p>Agustus 02, 2023</p>
+                                                    <a href="#">VIEW MORE<i class="ml-2 fa-solid fa-angle-down"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="pt-16 flex justify-center align-center">
+                        <a class="bg-[#e53070] text-sm w-max px-10 py-2 text-[#ffffff] rounded-full" href="">Informasi Selengkapnya<i class="ml-3 fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <!-- <a href="" class="pt-10 flex justify-center align-center">
+                        <div class="bg-[#e53070] w-max px-10 py-2 text-[#ffffff]">INFORMASI SELENGKAPNYA</div>
+                    </a> -->
+                </div>
+            </section>
+
+            <!-- SECTION FOOTER 1 -->
+            <section class="bg-[#eae7ea] text-[#ffffff] ">
+                <div class="mx-auto max-w-6xl">
+                    <div class="grid sm:grid-cols-2 mx-auto text-[#e53070]">
+                        <div class="bg-black/10 bg-cover bg-center bg-no-repeat sm:h-auto h-[250px]" style="background-image: url(Assets/image/contact.jpg)"></div>
+                        <div class="flex justify-between py-10 px-10">
+                            <!-- <h1 class="font-bold text-2xl">Kontak Kami</h1> -->
+                            <div class="w-[60%]">
+                                <div>
+                                    <h1 class="font-bold text-lg"><i class="mr-2 fa-solid fa-location-dot"></i>Lokasi</h1>
+                                    <p class="text-sm ">Desa Bungasrejo RT 04 RW 01 Kec. Jakenan Kab. Pati</p>
+                                </div>
+                                <div class="my-8">
+                                    <h1 class="font-bold text-lg"><i class="mr-2 fa-brands fa-whatsapp"></i>Whatsapp</h1>
+                                    <p class="text-sm"><span class="font-bold">Info: </span>0858 - 6014 - 3219</p>
+                                </div>
+                                <div>
+                                    <h1 class="font-bold text-lg"><i class="mr-2 fa-regular fa-envelope"></i>Email</h1>
+                                    <p class="text-sm">ardcreative01@gmail.com</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h1 class="font-bold text-lg"><i class="mr-2 fa-solid fa-link"></i>Lainnya</h1>
+                                <div class="text-sm">
+                                    <div><a href="">Kebijakan Privasi</a></div>
+                                    <div><a href="">Syarat & Ketentuan</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION FOOTER 2 -->
+            <section class="bg-[#e53070] flex text-center justify-center align-center text-[#ffffff] py-5">
+                <div class="text-sm">
+                    <p>Copyright<i class="mx-2 fa-regular fa-copyright"></i>CahyoMardhiko 2023</p>
+                    <p>All Rights Reserved</p>
+                    <p>ARD Creative</p>
+                </div>
+            </section>
+
+        </section>
+    </section>
+
+</body>
+</html>
