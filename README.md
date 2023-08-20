@@ -1,2 +1,2 @@
-# Techs
+# Tech
 - TailwindCSS
